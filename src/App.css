@@ -36,3 +36,95 @@
     transform: rotate(360deg);
   }
 }
+
+.App {
+  text-align: center;
+  width: 98%;
+  height:98%;
+  margin: 1%;
+}
+
+
+
+.navbar {
+  border-bottom: 1px solid #a5a1a2;
+  max-width: 90%;
+  display: flex;
+  /* margin: 0 auto; */
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+}
+
+h1 {
+  color: #4439a7;
+  margin-left: 0px 20px;
+}
+
+.link {
+  color: pink;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.link:hover {
+  color: blue;
+}
+
+.headerStyle{
+  border: 1px solid black;
+  background-color: #61dafb;
+}
+.homeStyle {
+  border: 1px solid black;
+  /* background-color: #cca0bf; */
+  height: 50%;
+  margin: 1%;
+  /* overflow-y: scroll; */
+}
+
+.homeTableStyle {
+  border: 1px solid green;
+  display:inline-block;
+  margin: 1%;
+  width: 64%;
+  overflow-y: scroll;
+  height: 50%;
+}
+
+.homeFormStyle {
+  /* border: 1px solid green; */
+  display:inline-block;
+  margin: 1%;
+  width: 30%;
+  height: 80%;
+  overflow-y: scroll;
+}
+.footerStyle {
+  border: 1px solid black;
+  background-color: #61dafb;
+
+}
+
+
+.resetButtonStyle{
+  margin:'5px';
+  padding:'3px';
+  font-size:'25px';
+  background-color:'red';
+ border-radius:'8px';
+}
+
+.submitButtonStyle{
+  margin:'5px';
+  padding:'3px';
+  font-size:'25px';
+  background-color:'green';
+ border-radius:'8px';
+}
