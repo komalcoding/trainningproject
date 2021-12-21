@@ -1,29 +1,84 @@
 import React from "react";
 import Student from "./student";
+import {useState} from "react";
 
 function HomeTable() {
-  var students = [
-    { name: "Pragya", marks: "91", mobile: "+91 123452340" },
-    { name: "Shivji", marks: "92", mobile: "+91 123452340" },
-    { name: "Radhe", marks: "93", mobile: "+91 123452340" },
-    { name: "Intekhab", marks: "94", mobile: "+91 234567740" },
+  var init_students = [
+    {
+      name: "Pragya",
+      marks: "91",
+      mobile: "+91 123452340",
+      enrollment: "18ETCSB001",
+    },
+    {
+      name: "Shivji",
+      marks: "92",
+      mobile: "+91 123452340",
+      enrollment: "18ETCSB002",
+    },
+    {
+      name: "Radhe",
+      marks: "93",
+      mobile: "+91 123452340",
+      enrollment: "18ETCSB003",
+    },
+    {
+      name: "Intekhab",
+      marks: "94",
+      mobile: "+91 234567740",
+      enrollment: "18ETCSB004",
+    },
   ];
 
-  const studentList = students.map((student) =>  
-   <Student name={students[0].name} marks={students[0].marks} mobile={students[0].mobile}  />
-  ); 
+  const [students, setStudents] = useState(init_students);
+
+  // const renderStudent = (student) => {
+  //   return (
+  //     <Student
+  //       name={students[0].name}
+  //       marks={students[0].marks}
+  //       mobile={students[0].mobile}
+  //     />
+  //   );
+  // };
+
+
+  /*
+  {if( student.enrollment !== enrollment){
+        console.log("unmatched");
+        return true;
+      }else{
+      
+        console.log("matched | " + student.enrollment +"|"+ enrollment)
+        return false;
+      }
+      return false;
+    }
+     */
+  const deleteHandler = (enrollment) => {
+    console.log('calling delete ' + enrollment);
+    const updatedStudents = students.filter(
+      (student) => student.enrollment !== enrollment);
+    console.log(updatedStudents);
+    setStudents(updatedStudents);
+  };
 
   return (
-    // <div className="homeTableStyle">      
-    //   <Student name={students[0].name} marks={students[0].marks} mobile={students[0].mobile} />
-    //   <Student name={students[1].name} marks={students[1].marks} mobile={students[1].mobile} />
-    //   <Student name={students[2].name} marks={students[2].marks} mobile={students[2].mobile} />
-    //   <Student name={students[3].name} marks={students[3].marks} mobile={students[3].mobile} />
-    // </div>
-<div className="homeTableStyle">
-  {studentList}
-</div>
-
+    <div className="homeTableStyle">
+      {students.map((student) => {
+        return (
+          <Student
+            name={student.name}
+            email={student.name}
+            marks={student.marks}
+            mobile={student.mobile}
+            key={student.enrollment}
+            enrollment={student.enrollment}
+            deleteHandler={deleteHandler}
+          />
+        );
+      })}
+    </div>
   );
 }
 
