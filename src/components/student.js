@@ -1,6 +1,7 @@
+
 import React from 'react'
 
-function Student({name, email, enrollment, mobile, marks, deleteHandler}/* props */) {
+function Student({name, email, enrollment, mobile, marks, deleteHandler, editHandler}/* props */) {
 
    //console.log(props);
 
@@ -23,7 +24,8 @@ function Student({name, email, enrollment, mobile, marks, deleteHandler}/* props
             <h2>Email: {email}</h2>
             <h3>Enrollment Number: {enrollment}</h3>
             <h3>Mobile:{mobile}</h3>
-            <h4>Marks:{marks}</h4><br/>
+            <h4>Marks:{marks}</h4><br/>            
+            <input type="button" value ="Edit " onClick={()=>editHandler({'name':name, 'email':email, 'enrollment':enrollment, 'mobile':mobile, 'marks':marks})}/>
             <input type="button" value ="Delete " onClick={()=>deleteHandler(enrollment)}/>
             <br/>
 
